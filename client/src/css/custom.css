@@ -1,0 +1,200 @@
+/* your styles go here */
+.foyr-pink {
+  color: #ef4b6e;
+}
+
+.foyr-bg-pink {
+  background-color: #ef4b6e!important;
+  color: white;
+}
+
+.primary-title {
+    color: rgba(0,0,0,0.87);
+    font-size: 24px;
+}
+.secondary-title {
+  color: rgba(0,0,0,0.87);
+  font-size: 20px;
+}
+
+/* checkbox - switch */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #ef4b6e;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #ef4b6e;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  .foyr-checkbox-label {
+    color: rgba(0,0,0,0.25);
+    margin-right: 20px;
+  }
+
+  /* multi-select custom css - npm module */
+  .multiselect-dropdown .dropdown-btn .selected-item {
+    border: 1px solid #ef4b6e !important;
+    background: #ef4b6e !important;
+}
+.multiselect-dropdown .dropdown-btn {
+  border: none !important;
+  border-bottom: 1px solid #ced4da !important;
+  border-radius: 0 !important;
+}
+.multiselect-item-checkbox input[type=checkbox] + div:before {
+  color: #ef4b6e !important;
+  border: 2px solid #ef4b6e !important;
+}
+.multiselect-item-checkbox input[type=checkbox]:checked + div:before {
+  background: #ef4b6e !important;
+}
+.multiselect-dropdown .dropdown-btn .dropdown-down {
+  border-top: 5px solid #adadad !important;
+  border-left: 5px solid transparent !important;
+  border-right: 5px solid transparent !important;
+}
+.multiselect-dropdown .dropdown-btn .dropdown-up{
+    border-bottom: 5px solid #adadad !important;
+    border-left: 5px solid transparent !important;
+    border-right: 5px solid transparent !important;
+}
+
+  /* end - multi-select custom css - npm module */
+
+  
+  .table thead th {
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+    color: rgba(0,0,0,0.87);
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table td, .table th {
+    color: rgba(0,0,0,0.54);
+}
+/* .table-data-custom {
+    color: rgba(0,0,0,0.54)
+} */
+
+.no-data-available {
+    display: block; 
+    text-align: center;
+    font-size: 14px;
+    color: rgba(0,0,0,0.54);
+}
+
+.table tbody tr:hover {
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.20);
+}
+
+.table {
+  margin-bottom: 0px;
+}
+
+
+
+.add-button-hover 
+button:hover {
+  box-shadow: 0 4px 2px 0 rgba(0,0,0,0.20);
+}
+
+.add-button {
+  border-radius: 73px;
+  height: 32px;
+  background:  #5FB233;
+  color: white;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.20);
+}
+.add-button-text {
+  font-size: 14px;
+}
+.form-close-icon {
+  text-align: end;
+  cursor: pointer;
+}
+.form-close-image {
+  width: 20px;
+  opacity: 0.4;
+}
+
+.form-close-image:hover {
+  opacity: 1;
+}
+option {
+  color: #ef4b6e !important;
+  background: white !important;
+}
+option:checked {
+  color: white !important;
+  background: #ef4b6e !important;
+}
+option:disabled {
+  background: rgba(0,0,0,0.13) !important;
+} 
+
+.table-header-note {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(0,0,0,0.50);
+}
+
+.select-label-readonly {
+  top: -4px !important;
+  left: 12px !important;
+}
