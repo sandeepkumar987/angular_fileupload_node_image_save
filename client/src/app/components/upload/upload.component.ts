@@ -23,7 +23,10 @@ export class UploadComponent implements OnInit {
     if (!this.uploadFiles) {
     }
     this.us.upload(this.uploadFiles.target.files).then(res => {
-
+      if (res.statusCode == 200) {
+        alert(res.message)
+        this.uploadFiles=null;
+      }
     }, err => {
       console.log(err);
     })

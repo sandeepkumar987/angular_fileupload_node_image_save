@@ -11,6 +11,7 @@ const routes: Routes = [
             children: [
                   { path: 'upload', component: UploadComponent },
                   { path: 'preview', component: ImagepreviewComponent },
+                  { path: 'images', component: ImagesComponent }
             ]
       },
       { path: '*', redirectTo: '' }

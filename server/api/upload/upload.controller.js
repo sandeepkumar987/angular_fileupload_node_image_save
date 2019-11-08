@@ -4,16 +4,32 @@ var multer = require('multer');
 const uuidv4 = require('uuid/v4');
 const mime = require('mime-types')
 
-exports.create = function (req, res, next) {
-    console.log(req);
+//Services
+var ImageMetaDataService = require('../imagemetadata/imagemetadata.service');
 
+exports.create = function (req, res, next) {
     const file = req.file
     if (!file) {
         const error = new Error('Please upload a file')
         error.httpStatusCode = 400
         return next(error)
     }
-    res.send(file)
+
+    let metadDataPayload = {
+        data: file
+    };
+
+    ImageMetaDataService.save(metadDataPayload, function (error,data) {
+        if (error) {
+            return res.boom.badRequest(error.message);
+        }
+        return res.status(200).json({
+            "statusCode": 200,
+            "error": "",
+            "message": "Successfully created !!!",
+            "data": data
+        });
+    });
 };
 
 

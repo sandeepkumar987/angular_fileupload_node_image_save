@@ -7,7 +7,7 @@ import { DashboardComponent } from './components';
 import { UploadComponent } from './components/upload/upload.component';
 import { ImagesComponent } from './components/images/images.component';
 import { ImagepreviewComponent } from './components/imagepreview/imagepreview.component';
-import  {UploadService} from './services/index'
+import { UploadService, MetadataService } from './services/index'
 
 @NgModule({
   declarations: [
@@ -22,7 +22,7 @@ import  {UploadService} from './services/index'
     HttpClientModule,
     AppRoutingModule,
   ],
-  providers: [UploadService],
+  providers: [UploadService, MetadataService],
 
   bootstrap: [AppComponent]
 })

@@ -1,3 +1,34 @@
-<p>
-  images works!
-</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-8">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">MIME TYPE</th>
+            <th scope="col">File</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of rawMetadata; let i=index;">
+            <th scope="row">{{i+1}}</th>
+            <td>{{item.data.mimetype}}</td>
+            <td>{{item.data.path}}</td>
+            <td><button type="button" (click)="previewImage(item)">View</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-4">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{imageUrl+imagePreviewData.path}}" alt="{{imagePreviewData.filename}}">
+        <div class="card-body">
+          <h5 class="card-title">Mime Type:{{imagePreviewData.mimetype}}</h5>
+          <p class="card-text">File Size: {{imagePreviewData.size}}</p>
+          <a href="{{imageUrl+imagePreviewData.path}}" class="btn btn-primary">In New Window</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

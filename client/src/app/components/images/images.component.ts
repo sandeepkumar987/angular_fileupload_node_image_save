@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MetadataService } from '../../services';
+
+import { environment } from '../../../environments/environment';
+
+const imageURI = environment.imageUrl
 
 @Component({
   selector: 'app-images',
@@ -7,9 +12,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ImagesComponent implements OnInit {
 
-  constructor() { }
+  private rawMetadata = [];
+  private imagePreviewData: any = {};
+  private imageUrl:any=''
+  constructor(private mds: MetadataService) { }
 
   ngOnInit() {
+    this.fetchMetadata();
+    this.imageUrl=imageURI;
+  }
+
+  fetchMetadata(query = {}) {
+    this.mds.get(query).subscribe((res) => {
+      this.rawMetadata = res.data;
+    }, (err) => {
+      alert(err.message);
+    })
+  }
+
+  previewImage(item) {
+    this.imagePreviewData = item.data;
+    console.log(item);
   }
 
 }

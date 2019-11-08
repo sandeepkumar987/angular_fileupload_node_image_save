@@ -4,13 +4,13 @@ var ev = require('express-validation');
 var cors = require('cors');
 
 module.exports = function (app) {
-    app.use(function(req,res,next){
+    app.use(function (req, res, next) {
         next();
     })
     app.use(cors())
     // API
     app.use('/api/upload', require('./api/upload'));
-
+    app.use('/api/metadata', require('./api/imagemetadata'));
 
     app.route('/:url(api|app|assets|img|js|styles|includes)/*')
         .get(function (req, res) {

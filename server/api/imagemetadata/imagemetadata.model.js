@@ -3,12 +3,12 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-var mongoose = require('mongoose');
-
 var ImagesMetadataSchema = new Schema({
-    metadata: {},
+    data: {},
     createdAt: { type: Date, 'default': Date.now },
-    updatedAt: { type: Date, 'default': Date.now }
+    updatedAt: { type: Date, 'default': Date.now },
+    isDeleted: { type: Boolean, 'default': false },
+    isActive: { type: Boolean, 'default': true },
 }, { versionKey: false, strict: false, timestamps: true });
 
 

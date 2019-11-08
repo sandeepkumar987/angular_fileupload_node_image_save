@@ -6,6 +6,6 @@ var express = require('express'),
 // Controller as Service
 const controller = require('./imagemetadata.controller');
 
-router.get('/', controller.create);
+router.get('/', controller.get);
 
 module.exports = router;

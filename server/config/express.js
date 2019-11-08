@@ -18,6 +18,7 @@ module.exports = function (app) {
     // app.use(bodyParser.json({ limit: '50mb' }));
     // app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
     app.use(express.static(path.join(config.root, 'client/dist/')));
+    app.use('/uploadbucket',express.static(path.join(config.root, 'uploadbucket/')));
     app.set('appPath', 'client/dist');
     app.set('view engine', 'html');
 
